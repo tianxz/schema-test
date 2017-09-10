@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.vinci.schematest.module.lessschema.TableGovernDao">
+    <insert id="createTable">
+      CREATE TABLE `${schemaName}`.`${tableName}` (
+          `ID` BIGINT NOT NULL,
+          `STATUS` BIGINT NULL,
+          `FIRST_NAME` VARCHAR(45) NULL,
+          `LAST_NAME` VARCHAR(45) NULL,
+          PRIMARY KEY (`ID`)
+      );
+    </insert>
+
+    <select id="mockQueryTable" resultType="long">
+        SELECT COUNT(*) FROM `${schemaName}`.`${tableName}`;
+    </select>
+</mapper>
